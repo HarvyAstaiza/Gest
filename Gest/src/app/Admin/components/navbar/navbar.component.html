@@ -1,27 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-ligth" href="#">GEST</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav flex-column">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-speedometer2 text-ligth"></i>DASHBOARD</a>
+          
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Usuarios</a>
+          
+          <a class="nav-link " href="#"><i  class="bi bi-person-workspace text-ligth"></i>DOCENTES</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link"  href="#"><i class="bi bi-universal-access text-ligth"></i>ESTUDIANTES</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Configuración</a>
+          <a class="nav-link" href="#"><i class="bi bi-book text-ligth"></i>CURSOS</a>
         </li>
-        <!-- Agrega más enlaces según tu diseño -->
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-card-checklist text-ligth"></i>EVALUACION</a>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav ml-5">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="bi bi-box-arrow-right"></i> Logout
+          </a>
+        </li>
       </ul>
     </div>
-  </nav>
+  </div>
+</nav>
