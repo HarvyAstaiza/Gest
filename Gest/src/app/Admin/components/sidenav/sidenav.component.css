@@ -4,7 +4,7 @@
     position: fixed;
     z-index: 1;
     top: 0;
-    width: 16.5625rem;
+    width: 5rem;
     height: 100vh;
     box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
 
@@ -53,7 +53,7 @@
 }
 
 .sidenav-collapsed{
-    width: 16.5625;
+    width: 16.5625rem;
 }
 .sidenav-nav{
     list-style: none;
@@ -67,7 +67,7 @@
     .sidenav-nav-item{
         width: 100%;
         margin-bottom: 0.625rem;
-        .sidenav-nav-link{
+        .sidenav-link{
             display: flex;
             align-items: center;
             height: 3rem;
