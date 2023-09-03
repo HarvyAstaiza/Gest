@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BodyComponent } from './components/body/body.component';
-import { RouterModule } from '@angular/router';
-
-
+import { HomeCoursesComponent } from './pages/home-courses/home-courses.component';
 
 
 
 @NgModule({
   declarations: [
+    HomeCoursesComponent
   ],
   imports: [
-    RouterModule,
     CommonModule
   ]
 })
-export class AdminModule { }
+export class CoursesModule { }

@@ -20,8 +20,15 @@ export const navbarData = [
         label:'Materias',
     },
     {
+        routeLink:'evaluations',
+        icon:'bi bi-card-checklist',
+        label:'Dashboard',
+    },
+    
+    {
         routeLink:'logout',
         icon:'bi bi-box-arrow-in-right',
         label:'Cerrar Sesion',
-    }
+    },
+    
 ];
