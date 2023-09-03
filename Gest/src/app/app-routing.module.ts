@@ -12,6 +12,7 @@ import { LoginComponent } from './login/pages/login/login.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Ruta inicial redirige al dashboard
   { path:'login', component:LoginComponent},
+  { path:'login', component:HomeComponent},
   { path:'teachers',component: HomeTeachersComponent},
   { path:'students',component:HomeStudentsComponent},
   {path:'dashboard',component:HomeDashboardComponent},
