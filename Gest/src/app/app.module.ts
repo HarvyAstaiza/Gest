@@ -13,7 +13,8 @@ import { HomeTeachersComponent } from './teachers/pages/home-teachers/home-teach
 import { HomeStudentsComponent } from './students/pages/home-students/home-students.component';
 import { HomeEvaluationsComponent } from './evaluations/pages/home-evaluations/home-evaluations.component';
 import { LoginComponent } from './login/pages/login/login.component';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -33,6 +34,8 @@ import { LoginComponent } from './login/pages/login/login.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

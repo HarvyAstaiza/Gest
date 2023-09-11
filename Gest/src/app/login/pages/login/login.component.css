@@ -1,0 +1,46 @@
+body{
+    text-align: center;
+
+}
+.fondo{
+    height: 100vh; /* Alto igual al alto de la ventana del navegador */
+    width: 100vw;
+    background: linear-gradient(45deg, #94efef, #1d1d89da); 
+}
+.marco {
+    text-align: center; 
+    padding: 100px;
+    /*display: flex;*/
+    display: inline-block;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Asegura que el cuerpo de la página ocupe toda la altura de la ventana */
+    
+}
+
+.texto{
+    background-color: rgb(250, 250, 250);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.boton{
+    margin-top: 1em;
+    width: 150px; /* Ancho del botón */
+    height: 30px; /* Alto del botón */
+    border-radius: 15px; /* Radio de las esquinas redondeadas */
+    background-color: #f4ac39; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    font-size: 16px; /* Tamaño de fuente del texto */
+    border: none; /* Quita el borde */
+    cursor: pointer;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    
+}
+.cajon1{
+    border-radius:10px;
+    border-color: #fff;
+    background-color: #fff;
+    background-color: transparent;
+    margin-bottom: 0.5em;
+    text-align: center;
+   
+}

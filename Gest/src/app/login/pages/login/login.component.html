@@ -1,1 +1,32 @@
-<h1>login</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="login-container, fondo">
+    <div class="">
+      <img src="https://o.remove.bg/downloads/92b9d011-cd2d-4a15-9e68-4528c3c1490f/lg-removebg-preview.png"
+        alt="Logo de la aplicación">
+      <form (submit)="onLogin(email, password)">
+        <div class="form-group">
+          <label  for="email"></label>
+          <input [placeholder]="placeholder_email" class="cajon1" type="text" id="email" name="email" [(ngModel)]="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password"></label>
+          <input [placeholder]="placeholder_password" class="cajon1" type="password" id="password" name="password" [(ngModel)]="password" required />
+        </div>
+        <button class="boton" type="submit">Iniciar sesión</button>
+      </form>
+      <br>
+      <a href="http://facebook.com">Olvide mi contraseña</a>
+    </div>
+  </div>
+</body>
+
+</html>
