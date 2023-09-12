@@ -1,34 +1,35 @@
 export const navbarData = [
     {
-    routeLink:'dashboard',
+    routeLink:'/home/dashboard',
     icon:'bi bi-speedometer2',
     label:'Dashboard',
     },
     {
-        routeLink:'teachers',
+        routeLink:'/home/teachers',
         icon:'bi bi-person-workspace',
         label:'Docentes',
     },
     {
-        routeLink:'students',
+        routeLink:'/home/students',
         icon:'bi bi-universal-access',
         label:'Estudiantes',
     },
     {
-        routeLink:'courses',
+        routeLink:'/home/courses',
         icon:'bi bi-book',
         label:'Materias',
     },
     {
-        routeLink:'evaluations',
+        routeLink:'/home/evaluations',
         icon:'bi bi-card-checklist',
         label:'Dashboard',
     },
     
     {
-        routeLink:'logout',
+        routeLink:'/login',
         icon:'bi bi-box-arrow-in-right',
         label:'Cerrar Sesion',
+
     },
     
 ];

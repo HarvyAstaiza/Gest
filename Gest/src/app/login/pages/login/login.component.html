@@ -3,19 +3,16 @@
 
 <div class="contenedor">
 <div class="central">
-  <div class="login">
-    
+  <div class="login">    
      <p class="titulo">Bienvenido A Gest</p>
       <hr>
-     <form id="loginform" (submit)="onLogin(email, password)">
+     <form (ngSubmit)="onLogin(email,password)">
         <img class="logo_fup" src="assets/images/logo_fup.png" alt="Logo de la aplicación">   
-          <label  for="email"></label>
-          <input [placeholder]="placeholder_email" class="cajon1" type="text" id="email" name="email" [(ngModel)]="email" required />
-        
-          <label for="password"></label>
-          <input [placeholder]="placeholder_password" class="cajon1" type="password" id="password" name="password" [(ngModel)]="password" required />
-        
-        <button class="boton" type="submit">Iniciar sesión</button>
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="email" [(ngModel)]="email" required>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+        <button type="submit"  >Iniciar Sesión</button>
         <a class="recovery" href="http://facebook.com">Olvide mi contraseña</a>
       </form>
       <br>

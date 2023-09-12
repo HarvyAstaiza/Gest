@@ -5,16 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NavbarComponent } from './Admin/components/navbar/navbar.component';
 import { HomeComponent } from './Admin/components/home/home.component';
 import { SidenavComponent } from './Admin/components/sidenav/sidenav.component';
 import { BodyComponent } from './Admin/components/body/body.component';
-import { HomeTeachersComponent } from './teachers/pages/home-teachers/home-teachers.component';
-import { HomeStudentsComponent } from './students/pages/home-students/home-students.component';
-import { HomeEvaluationsComponent } from './evaluations/pages/home-evaluations/home-evaluations.component';
 import { LoginComponent } from './login/pages/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { AuthenticationService } from './login/services/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { HomeCoursesComponent } from './courses/pages/home-courses/home-courses.component';
+
 
 
 @NgModule({
@@ -22,12 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     SidenavComponent,
     HomeComponent,
-    NavbarComponent,
     BodyComponent,
-    HomeTeachersComponent,
-    HomeStudentsComponent,
-    HomeEvaluationsComponent,
-    LoginComponent
+    LoginComponent,
+    HomeCoursesComponent,   
   ],
   imports: [
     BrowserModule,
@@ -35,9 +32,12 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
+
   ],
-  providers: [],
+  providers: [AuthenticationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
