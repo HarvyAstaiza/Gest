@@ -22,7 +22,7 @@ export const navbarData = [
     {
         routeLink:'/home/evaluations',
         icon:'bi bi-card-checklist',
-        label:'Dashboard',
+        label:'Evaluacion',
     },
     
     {

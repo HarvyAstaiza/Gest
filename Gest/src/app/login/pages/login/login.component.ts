@@ -10,7 +10,8 @@ import { AuthenticationService } from '../../services/authentication.service';
 export class LoginComponent {
   email: string = '';
   password: string = '';
-  islogin: boolean = false;
+  placeholder_email='Usuario';
+  placeholder_password='Contraseña';
 
   constructor( private router:Router, private authService: AuthenticationService,) {}
 
