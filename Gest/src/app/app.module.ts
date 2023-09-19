@@ -12,8 +12,12 @@ import { LoginComponent } from './login/pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from './login/services/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardModule } from './dashboard/dashboard.module';
+
 import { HomeCoursesComponent } from './courses/pages/home-courses/home-courses.component';
+import { CommonModule } from '@angular/common';
+import { HomeTeachersComponent } from './teachers/pages/home-teachers/home-teachers.component';
+import { HomeEvaluationsComponent } from './evaluations/pages/home-evaluations/home-evaluations.component';
+import { HomeStudentsComponent } from './students/pages/home-students/home-students.component';
 
 
 
@@ -24,17 +28,18 @@ import { HomeCoursesComponent } from './courses/pages/home-courses/home-courses.
     HomeComponent,
     BodyComponent,
     LoginComponent,
-    HomeCoursesComponent,   
+    HomeCoursesComponent,
+    HomeTeachersComponent,
+    HomeCoursesComponent,
+    HomeEvaluationsComponent  ,
+    HomeStudentsComponent 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule,
     FormsModule,
     HttpClientModule,
-    
-
   ],
   providers: [AuthenticationService
   ],

@@ -6,6 +6,7 @@ import { DashboardComponent } from './Admin/components/dashboard/dashboard.compo
 import { HomeStudentsComponent } from './students/pages/home-students/home-students.component';
 import { HomeEvaluationsComponent } from './evaluations/pages/home-evaluations/home-evaluations.component';
 import { HomeCoursesComponent } from './courses/pages/home-courses/home-courses.component';
+import { HomeTeachersComponent } from './teachers/pages/home-teachers/home-teachers.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
   {path:'students',component:HomeStudentsComponent},
   { path:'evaluations',component:   HomeEvaluationsComponent},
   {path:'courses',component:HomeCoursesComponent},
-  {path:'teachers',component:HomeCoursesComponent},
+  {path:'teachers',component:HomeTeachersComponent},
 
 ]
 }// Agrega más rutas para otras secciones
