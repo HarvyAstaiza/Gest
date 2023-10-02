@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Teachers } from './teacher';
-import { TeachersService } from './teachers.service';
+import { Teachers } from '../../pages/home-teachers/teacher';
+import { TeachersService } from '../../pages/home-teachers/teachers.service';
+
 
 @Component({
   selector: 'app-home-teachers',

@@ -1,4 +1,6 @@
-export const navbarData = [
+import { INavbarData } from "./helper";
+
+export const navbarData : INavbarData[] = [
     {
     routeLink:'/home/dashboard',
     icon:'bi bi-speedometer2',
@@ -8,6 +10,16 @@ export const navbarData = [
         routeLink:'/home/teachers',
         icon:'bi bi-person-workspace',
         label:'Docentes',
+        items:[
+            {
+            routeLink:'/home/teachers/list',
+            label:'Listar Docentes'
+            },
+            {
+                routeLink:'/home/teachers/create',
+                label:'Crear Docentes'
+            }
+    ]
     },
     {
         routeLink:'/home/students',

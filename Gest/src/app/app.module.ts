@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +17,14 @@ import { CommonModule } from '@angular/common';
 import { HomeTeachersComponent } from './teachers/pages/home-teachers/home-teachers.component';
 import { HomeEvaluationsComponent } from './evaluations/pages/home-evaluations/home-evaluations.component';
 import { HomeStudentsComponent } from './students/pages/home-students/home-students.component';
+import { ListarStudentsComponent } from './students/components/listar-students/listar-students.component';
+import { ListarTeachersComponent } from './teachers/components/listar-teachers/listar-teachers.component';
+
+import { RouterModule } from '@angular/router';
+import { OverlayModule } from '@angular/cdk/overlay'
+import { CdkMenuModule } from '@angular/cdk/menu'
+import { SublevelMenuComponent } from './Admin/components/sidenav/sublevel-menu.component';
+
 
 
 
@@ -32,14 +39,20 @@ import { HomeStudentsComponent } from './students/pages/home-students/home-stude
     HomeTeachersComponent,
     HomeCoursesComponent,
     HomeEvaluationsComponent  ,
-    HomeStudentsComponent 
+    HomeStudentsComponent ,
+    ListarStudentsComponent,
+    ListarTeachersComponent,
+    SublevelMenuComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    CommonModule,
+    RouterModule
   ],
   providers: [AuthenticationService
   ],

@@ -4,5 +4,6 @@ export interface Teachers{
     Nombre: String,
     Correo:String,
     Password:String,
-    Rol:String
+    Rol:String,
+    Programa:String,
 }

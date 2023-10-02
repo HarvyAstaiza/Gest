@@ -20,4 +20,41 @@ export class StudentsService {
       return throwError('Token no encontrado');
     }
 }
+  postEstudiantes(): Observable<any[]> {
+  const token = localStorage.getItem('access_token');
+  if (token) {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<any[]>(this.apiUrl+'/list-estudiante', { headers });
+  } else {
+    // Manejar el caso en que no se encuentre el token
+    return throwError('Token no encontrado');
+  }
 }
+putEstudiantes(): Observable<any[]> {
+  const token = localStorage.getItem('access_token');
+  if (token) {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<any[]>(this.apiUrl+'/list-estudiante', { headers });
+  } else {
+    // Manejar el caso en que no se encuentre el token
+    return throwError('Token no encontrado');
+  }
+}
+deleteEstudiantes(): Observable<any[]> {
+  const token = localStorage.getItem('access_token');
+  if (token) {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<any[]>(this.apiUrl+'/list-estudiante', { headers });
+  } else {
+    // Manejar el caso en que no se encuentre el token
+    return throwError('Token no encontrado');
+  }
+}
+}
+

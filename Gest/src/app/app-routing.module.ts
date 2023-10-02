@@ -7,6 +7,10 @@ import { HomeStudentsComponent } from './students/pages/home-students/home-stude
 import { HomeEvaluationsComponent } from './evaluations/pages/home-evaluations/home-evaluations.component';
 import { HomeCoursesComponent } from './courses/pages/home-courses/home-courses.component';
 import { HomeTeachersComponent } from './teachers/pages/home-teachers/home-teachers.component';
+import { ListarTeachersComponent } from './teachers/components/listar-teachers/listar-teachers.component';
+import { EliminarTeachersComponent } from './teachers/components/eliminar-teachers/eliminar-teachers.component';
+import { ActualizarTeachersComponent } from './teachers/components/actualizar-teachers/actualizar-teachers.component';
+import { CreateTeachersComponent } from './teachers/components/create-teachers/create-teachers.component';
 
 
 const routes: Routes = [
@@ -18,7 +22,13 @@ const routes: Routes = [
   {path:'students',component:HomeStudentsComponent},
   { path:'evaluations',component:   HomeEvaluationsComponent},
   {path:'courses',component:HomeCoursesComponent},
-  {path:'teachers',component:HomeTeachersComponent},
+  {path:'teachers',component:HomeTeachersComponent 
+  ,children:[
+    {path:'list',component :ListarTeachersComponent},
+    {path:'create',component :CreateTeachersComponent},
+    {path:'update',component :ActualizarTeachersComponent},
+    {path:'delete',component :EliminarTeachersComponent}
+  ]},
 
 ]
 }// Agrega más rutas para otras secciones

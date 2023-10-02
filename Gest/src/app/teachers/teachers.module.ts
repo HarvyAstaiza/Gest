@@ -11,7 +11,7 @@ import { HomeTeachersComponent } from './pages/home-teachers/home-teachers.compo
 @NgModule({
   declarations: [
     CreateTeachersComponent,
-    ListarTeachersComponent,
+    
     EliminarTeachersComponent,
     ActualizarTeachersComponent,
     
