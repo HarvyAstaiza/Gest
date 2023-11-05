@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Teachers } from '../../pages/home-teachers/teacher';
+import { TeachersService } from '../../service/teachers.service';
+import { ObjectId } from 'mongodb';
 
 @Component({
   selector: 'app-actualizar-teachers',
@@ -6,5 +9,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./actualizar-teachers.component.css']
 })
 export class ActualizarTeachersComponent {
+  teacher: Teachers = {
+    code_Teacher:'',
+    identification: '',
+    name: '',
+    
+  };
+   
+  constructor(private teachersService: TeachersService) {
 
+    
+  } // Inyecta tu servicio de API
+
+  
+  ngOnInit() {
+   
+  }
+  
+  
 }
+

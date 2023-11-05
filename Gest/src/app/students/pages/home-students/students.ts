@@ -1,5 +1,8 @@
+import { ObjectId } from "mongodb";
+
 export interface Students{
-    Identificacion:Number,
+    _id?:ObjectId
+    Identificacion:String,
     Nombre:String,
     Codigo:String,
     Pensum:String,
@@ -8,6 +11,8 @@ export interface Students{
     Semestre:String,
     Celular:String	,
     Correo:String,
+    Contraseña:String,
     Correo_institucional:String,
     Rol:String,
+
 }

@@ -1,0 +1,38 @@
+<div class="container">
+    <h1 class="text-center">Crear Cursos</h1>
+    <form (ngSubmit)="onCreateCourses()">
+        <div class="row">
+            <div class="form-group col-6">
+                <label for="Codigo_Asignatura">Código de Asignatura</label>
+                <input type="text" class="form-control" id="Codigo_Asignatura" name="Codigo_Asignatura"
+                    [(ngModel)]="courses.Codigo_Asignatura">
+            </div>
+            <div class="form-group col-6">
+                <label for="Nombre">Nombre del Curso</label>
+                <input type="text" class="form-control" id="Nombre" name="Nombre" [(ngModel)]="courses.Nombre">
+            </div>
+            <div class="form-group col-6">
+                <label for="Jornada">Jornada</label>
+
+                <select class="form-control" id="Jornada" name="Jornada" [(ngModel)]="courses.Jornada">
+                    <option value="Diurna">Diurna</option>
+                    <option value="Nocturna">Nocturna</option>
+                </select>
+            </div>
+            <div class="form-group col-6">
+                <label for="Semestre">Semestre</label>
+                <select class="form-control" id="Semestre" name="Semestre" [(ngModel)]="courses.Semestre">
+                    <option *ngFor="let semester of semestreOptions" [value]="semester">{{semester}}</option>
+                </select>
+            </div>
+            <div class="form-group col-6">
+                <label for="Tipo_Materia">Tipo Materia</label>
+                <select class="form-control" id="Tipo_Materia" name="Tipo_Materia" [(ngModel)]="courses.Tipo_Materia">
+                    <option value="Habilitable">Habilitable</option>
+                    <option value="inHabilitable">Inhabilitable</option>
+                </select>
+            </div>
+        </div>    
+            <button type="submit" class="btn btn-primary mt-5 offset-5 justify-content-center d-flex">Guardar</button>
+    </form>
+</div>

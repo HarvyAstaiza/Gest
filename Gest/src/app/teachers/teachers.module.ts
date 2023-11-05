@@ -10,14 +10,12 @@ import { HomeTeachersComponent } from './pages/home-teachers/home-teachers.compo
 
 @NgModule({
   declarations: [
-    CreateTeachersComponent,
     
-    EliminarTeachersComponent,
-    ActualizarTeachersComponent,
     
   ],
   imports: [
     CommonModule
+    
   ]
 })
 export class TeachersModule { }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Teachers } from '../../pages/home-teachers/teacher';
-import { TeachersService } from '../../pages/home-teachers/teachers.service';
+import { TeachersService } from '../../service/teachers.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class HomeTeachersComponent {
   constructor(private teachersService: TeachersService) {}
 
   ngOnInit(): void {
-    this.teachersService.getDocentes().subscribe(data => {
+    this.teachersService.getTeachers().subscribe(data => {
       this.Teachers = data;
     });
   }

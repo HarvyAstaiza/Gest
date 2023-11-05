@@ -1,6 +1,6 @@
 .container {
-    max-height: 90vh; /* Establece una altura máxima para el contenedor */
-    max-width: 80vw;
+    max-height: 95vh; /* Establece una altura máxima para el contenedor */
+    max-width: 100vw;
     overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
-    border: 1px solid #080101; /* Agrega un borde para un mejor aspecto */
+    /* Agrega un borde para un mejor aspecto */
   }

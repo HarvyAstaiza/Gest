@@ -1,40 +1,37 @@
-<form class="container">
-    <h1 class="text-center"> Creacion De Docentes</h1>
-    <div class="row text-center mt-5">
+<div class="container ">
+  <h1 class="text-center">Crear Docentes</h1>
+  <form (ngSubmit)="onCreateTeacher()" class="">
 
-        <div class="offset-2 col-3  mb-1">
-            <label for="InputIdentificacion" class="form-label">Identificación</label>
-            <input type="text" class="form-control" id="InputIdentificacion" aria-describedby="emailHelp">
-            <div id="identificacionHelp" class="form-text">Ingresa Tu Identificación</div>
-        </div>
-        <div class="offset-2 col-3  mb-1">
-            <label for="InputNombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="InputNombre">
-            <div id="nombreHelp" class="form-text">Ingresa tu Nombre Completo </div>
-        </div>
-        <div class="offset-2 col-3 mb-1">
-            <label for="InputPrograma" class="form-label">Programa</label>
-            <input type="text" class="form-control" id="InputPrograma" aria-describedby="emailHelp">
-            <div id="programaHelp" class="form-text">¿A que programa perteneces? </div>
-        </div>
-        <div class="offset-2 col-3  mb-1">
-            <label for="InputCorreo" class="form-label">Correo</label>
-            <input type="text" class="form-control" id="InputCorreo">
-            <div id="correohelp" class="form-text">Ingresa Tu Correo</div>
-        </div>
-        <div class="offset-2 col-3  mb-1">
-            <label for="InputContraseña" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="InputPassword" aria-describedby="emailHelp">
-            <div id="contraseñahelp" class="form-text">Ingresa Tu Contraseña</div>
-        </div>
-        <div class="offset-2 col-3  mb-1">
-            <label for="InputRol" class="form-label">Rol</label>
-            <input type="text" class="form-control" id="InputRol">
-            <div id="rolhelp" class="form-text">Ingresa Tu Rol</div>
-            
-        </div>
-        <div class="row text-center col-2 offset-5">
-            <button type="submit" class="btn btn-primary mx-auto ">Enviar</button>
-        </div>
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="code_teacher">Codigo Docente</label>
+        <input type="text" class="form-control" id="code_teacher" [(ngModel)]="teacher.identification" name="code_teacher">
     </div>
-</form>
+      <div class="form-group col-6">
+          <label for="identification">Identificación</label>
+          <input type="text" class="form-control" id="identification" [(ngModel)]="teacher.identification" name="identification">
+      </div>
+      <div class="form-group col-6">
+          <label for="name">Nombre Completo</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="teacher.name" name="name">
+      </div>
+      
+    </div>
+    <!-- <h1> Datos de Inicio de sesion</h1>
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="Correo">Correo</label>
+        <input type="text" class="form-control" id="Correo" [(ngModel)]="usuarios.Correo" name="Correo">
+    </div>
+    <div class="form-group col-6">
+        <label for="Password">Contraseña</label>
+        <input type="Password" class="form-control" id="Password" [(ngModel)]="usuarios.Password" name="Password">
+    </div>
+    <div class="form-group col-6">
+      <label for="Rol">Rol</label>
+      <input type="text" class="form-control" id="Rol" name="Rol" [(ngModel)]="usuarios.Rol" readonly>
+    </div>
+    </div> -->
+      <button type="submit" class="btn btn-primary mt-5 offset-5 justify-content-center d-flex">Guardar</button>
+  </form>
+</div>

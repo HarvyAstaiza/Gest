@@ -1,14 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-
+import { API_URL } from 'src/app/api-config';
 @Injectable({
   providedIn: 'root'
 })
 export class StudentsService {
-  private apiUrl = 'http://localhost:4000/api'; // Reemplaza con la URL de tu API
+  private apiUrl = `${API_URL}`; // Reemplaza con la URL de tu API
   constructor(private http: HttpClient) {}
-  getEstudiantes(): Observable<any[]> {
+  getStudents(): Observable<any[]> {
     const token = localStorage.getItem('access_token');
     if (token) {
       const headers = new HttpHeaders({
@@ -20,16 +20,19 @@ export class StudentsService {
       return throwError('Token no encontrado');
     }
 }
-  postEstudiantes(): Observable<any[]> {
-  const token = localStorage.getItem('access_token');
+postStudents(newStudent: any): Observable<any> {
+  const token = localStorage.getItem("access_token");
+
   if (token) {
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json", // Especifica el tipo de contenido
     });
-    return this.http.get<any[]>(this.apiUrl+'/list-estudiante', { headers });
+
+    return this.http.post<any>(this.apiUrl +"/crear-estudiante" , newStudent, { headers });
   } else {
     // Manejar el caso en que no se encuentre el token
-    return throwError('Token no encontrado');
+    return throwError("Token no encontrado");
   }
 }
 putEstudiantes(): Observable<any[]> {
@@ -44,16 +47,18 @@ putEstudiantes(): Observable<any[]> {
     return throwError('Token no encontrado');
   }
 }
-deleteEstudiantes(): Observable<any[]> {
-  const token = localStorage.getItem('access_token');
+deleteStudentsById(_id: string): Observable<any> {
+  const token = localStorage.getItem("access_token");
   if (token) {
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     });
-    return this.http.get<any[]>(this.apiUrl+'/list-estudiante', { headers });
+
+    const deleteUrl = `${this.apiUrl}/eliminar-estudiante/${_id}`; // URL para eliminar un usuario por ID
+
+    return this.http.delete(deleteUrl, { headers });
   } else {
-    // Manejar el caso en que no se encuentre el token
-    return throwError('Token no encontrado');
+    return throwError("Token no encontrado");
   }
 }
 }

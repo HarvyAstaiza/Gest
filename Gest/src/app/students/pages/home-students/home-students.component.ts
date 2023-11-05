@@ -8,13 +8,5 @@ import { StudentsService } from '../../service/students.service';
   styleUrls: ['./home-students.component.css']
 })
 export class HomeStudentsComponent {
-  Students: Students[] = [];
-
-  constructor(private studentsService: StudentsService) {}
-
-  ngOnInit(): void {
-    this.studentsService.getEstudiantes().subscribe(data => {
-      this.Students = data;
-    });
-  }
+  
 }

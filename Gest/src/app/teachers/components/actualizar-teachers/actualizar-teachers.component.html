@@ -1,1 +1,37 @@
-<p>actualizar-teachers works!</p>
+<div class="container ">
+  <h1 class="text-center">Crear Docentes</h1>
+  <form  class="">
+
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="code_teacher">Codigo Docente</label>
+        <input type="text" class="form-control" id="code_teacher" [(ngModel)]="teacher.identification" name="code_teacher">
+    </div>
+      <div class="form-group col-6">
+          <label for="identification">Identificación</label>
+          <input type="text" class="form-control" id="identification" [(ngModel)]="teacher.identification" name="identification">
+      </div>
+      <div class="form-group col-6">
+          <label for="name">Nombre Completo</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="teacher.name" name="name">
+      </div>
+      
+    </div>
+    <!-- <h1> Datos de Inicio de sesion</h1>
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="Correo">Correo</label>
+        <input type="text" class="form-control" id="Correo" [(ngModel)]="usuarios.Correo" name="Correo">
+    </div>
+    <div class="form-group col-6">
+        <label for="Password">Contraseña</label>
+        <input type="Password" class="form-control" id="Password" [(ngModel)]="usuarios.Password" name="Password">
+    </div>
+    <div class="form-group col-6">
+      <label for="Rol">Rol</label>
+      <input type="text" class="form-control" id="Rol" name="Rol" [(ngModel)]="usuarios.Rol" readonly>
+    </div>
+    </div> -->
+      <button type="submit" class="btn btn-primary mt-5 offset-5 justify-content-center d-flex">Guardar</button>
+  </form>
+</div>

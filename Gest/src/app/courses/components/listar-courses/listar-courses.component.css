@@ -3,4 +3,5 @@
     max-width: 100vw;
     overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
     /* Agrega un borde para un mejor aspecto */
+    margin: 30px;
   }

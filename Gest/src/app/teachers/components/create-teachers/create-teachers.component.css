@@ -2,3 +2,9 @@ h1 {
     font-family: 'Ghotam-Bold';
     /* Usar la fuente personalizada, y si no está disponible, usar una fuente genérica */
 }
+.container {
+    max-height: 90vh; /* Establece una altura máxima para el contenedor */
+    max-width: 90vw;
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+     /* Agrega un borde para un mejor aspecto */
+  }

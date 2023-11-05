@@ -1,0 +1,6 @@
+.container {
+    max-height: 80vh; /* Establece una altura máxima para el contenedor */
+    max-width: 80vw;
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+     /* Agrega un borde para un mejor aspecto */
+  }
