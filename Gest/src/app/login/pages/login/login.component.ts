@@ -14,6 +14,7 @@ export class LoginComponent {
   placeholder_password='Contraseña';
   loading: boolean = false;
   errorMessage: string = '';
+  
   constructor( private router:Router, private authService: AuthenticationService,) {}
 
   // Propiedades y constructor
@@ -23,14 +24,20 @@ export class LoginComponent {
     this.loading = true; // Muestra el elemento de carga
     this.errorMessage = '';
     this.authService.login(this.email, this.password).subscribe(
-      (response: { token: any }) => {
+      (response: { token: any ,id_user: any ,role :any }) => {
         const token = response.token;
+        const userId = response.id_user;
+        const userRol = response.role;
 
         // Almacena el token en el almacenamiento local o en una cookie para su posterior uso.
         localStorage.setItem('access_token', token);
-        
+         // Guarda el userId en el almacenamiento local
+        this.authService.setUserId(userId);
+        this.authService.setUserRol(userRol);
         // Una vez que la operación de inicio de sesión se haya completado, oculta el elemento de carga.
         this.loading = false;
+        console.log(userId);
+        console.log(userRol);
         this.router.navigate(['/home/dashboard']);
       },
       (error) => {

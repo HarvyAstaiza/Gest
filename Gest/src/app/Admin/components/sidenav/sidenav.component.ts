@@ -1,7 +1,9 @@
-import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output, Input } from '@angular/core';
 import { navbarData } from './nav-data';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { INavbarData } from './helper';
+import { AuthenticationService } from '../../../login/services/authentication.service';
+
 
 interface SideNavToggle{
   screenWidth:number;
@@ -43,6 +45,14 @@ export class SidenavComponent implements OnInit {
   screenWidth = 0;
   navData = navbarData;
   multiple:boolean=false;
+  isAdmin: boolean=false;
+  userId: string;
+  userRol:String;
+  constructor(private authenticationService: AuthenticationService) {
+    this.userId = this.authenticationService.getUserId();
+    this.userRol =this.authenticationService.getUserRol();
+    
+  }
 
   @HostListener("window:resize", ["$event"])
   onResize(event: any) {
@@ -56,14 +66,22 @@ export class SidenavComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+   
     this.screenWidth = window.innerWidth;
+    this.userId = this.authenticationService.getUserId();
+    this.userRol = this.authenticationService.getUserRol();
+    this.isAdmin = this.userRol === 'Administrador';
+   // Verificar si es docente.
+    
   }
   toggleCollapse(): void {
     this.collapsed = !this.collapsed;
     this.onToggleSideNav.emit({
       collapsed: this.collapsed,
       screenWidth: this.screenWidth,
+    
     });
+    console.log(this.userId)  
   }
   closeSidenav(): void {
     this.collapsed = false;
@@ -81,5 +99,21 @@ export class SidenavComponent implements OnInit {
     }
   }
   item.expanded =!item.expanded
+
   }
+  getTabsForUserRole(): INavbarData[] {
+    if (this.isAdmin) {
+      // Si es administrador, muestra estas pestañas
+      return this.navData.filter(item =>
+        ['Dashboard', 'Docentes', 'Estudiantes', 'Materias', 'Usuarios', 'Cerrar Sesion'].includes(item.label)
+      );
+    } else {
+      // Para otros roles, muestra pestañas específicas para esos roles
+      // Puedes ajustar esta lógica dependiendo de los roles y las pestañas que correspondan a cada uno
+      return this.navData.filter(item =>
+        ['Dashboard', 'Materias',  'Bibliografia', 'Evaluacion','Cibergrafia','Cerrar Sesion'].includes(item.label)
+      );
+    }
+  }
+  
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 interface SideNavToggle{
@@ -14,7 +14,7 @@ interface SideNavToggle{
 export class HomeComponent {
   isSideNavCollapsed = false;
   screenWidth = 0;
-  
+   @Input() userId: string = '';
   onToggleSideNav(data:SideNavToggle):void{
   this.screenWidth = data.screenWidth;
   this.isSideNavCollapsed =data.collapsed;

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Courses } from '../../pages/home-courses/courses';
 import { CoursesService } from '../../services/courses.service';
+import { TeachersService } from '../../../teachers/service/teachers.service';
+import { Teachers } from '../../../teachers/pages/home-teachers/teacher';
 
 @Component({
   selector: 'app-listar-courses',
@@ -12,7 +14,7 @@ export class ListarCoursesComponent {
   Courses: Courses[] = [];
   
   router: any;
-  constructor(private coursesService: CoursesService) {}
+  constructor(private coursesService: CoursesService, private teacherService:TeachersService) {}
 
   ngOnInit(): void {
     this.loadCourses();

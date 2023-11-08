@@ -29,7 +29,7 @@ export class TeachersService {
       const headers = new HttpHeaders({
         Authorization: `Bearer ${token}`,
       });
-      const url = `${this.apiUrl}/list-docente/${teacherId}`; // Ajusta la URL de la API según tu estructura de enrutamiento
+      const url = `${this.apiUrl}list-teacher/${teacherId}`; // Ajusta la URL de la API según tu estructura de enrutamiento
       return this.http.get(url, { headers }).pipe(
         catchError((error: any) => {
           console.error('Error al obtener los datos del docente', error);

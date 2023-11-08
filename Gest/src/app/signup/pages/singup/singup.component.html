@@ -1,6 +1,6 @@
 <div class="container">
     <h1 class="text-center">Crear Usuario</h1>
-    <form [formGroup]="formulario" (ngSubmit)="registrarUsuario()" class=" " novalidate>
+    <form [formGroup]="formulario" (ngSubmit)="registrarUsuario()" class=" " novalidate >
         <div class=" form-group offset-4 col-6">
             <label for="email">Correo Electrónico</label>
             <input formControlName="email" type="text" class="form-control" placeholder="Email">
@@ -17,7 +17,7 @@
         </div>
         <div class="form-group offset-4  col-6">
             <label for="role">Rol</label>
-            <select formControlName="role" class="form-control">
+            <select formControlName="role" class="form-control" (change)="resetCodeUser()">
                 <option value="">Seleccionar Rol</option>
                 <option value="Docente">Docente</option>
                 <option value="Estudiante">Estudiante</option>
@@ -28,15 +28,23 @@
             </div>
         </div>
         <div class="form-group offset-4 col-6">
-            <label for="code_User">Docente</label>
+            <label for="code_User">Usuario a Asignar</label>
             <select formControlName="code_User" class="form-control">
-                <option value="">Seleccionar Docente</option>
-                <option *ngFor="let teacher of teachers" [value]="teacher._id">{{ teacher.name }}</option>
+                <option value="">Seleccionar el Usuario a Asignar</option>
+                <ng-container *ngIf="formulario.get('role')?.value === 'Docente'; then teacherOptions else studentOptions"></ng-container>
             </select>
             <div *ngIf="formulario.get('code_User')?.invalid && formulario.get('code_User')?.touched" class="text-danger">
                 El docente es requerido.
             </div>
         </div>
+
+        <ng-template #teacherOptions>
+            <option *ngFor="let teacher of teachers" [value]="teacher._id">{{ teacher.name }}</option>
+        </ng-template>
+        
+        <ng-template #studentOptions>
+            <option *ngFor="let student of students" [value]="student._id">{{ student.name_Student }}</option>
+        </ng-template>
         <div class="form-group offset-4 col-6 text-center"> <!-- Aplicar la clase text-center -->
             <button class="btn btn-primary mt-5" type="submit">Registrarse</button>
         </div>

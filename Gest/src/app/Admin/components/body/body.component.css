@@ -6,7 +6,7 @@
     position: relative;
     top: 0;
     transition: all .5s ease;
-    background: #f4f7fa;
+    background: rgba(205, 210, 226, 0.685);
     padding: 3rem;
 }
 .body-trimmed{

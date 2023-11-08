@@ -22,7 +22,7 @@ export class CoursesService {
       const headers = new HttpHeaders({
         Authorization: `Bearer ${token}`,
       });
-      return this.http.get<any[]>(this.apiUrl + "/", { headers });
+      return this.http.get<any[]>(this.apiUrl + "List-Subject", { headers });
     } else {
       // Manejar el caso en que no se encuentre el token
       return throwError("Token no encontrado");
