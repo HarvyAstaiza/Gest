@@ -4,3 +4,25 @@
     overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
     /* Agrega un borde para un mejor aspecto */
   }
+  .active {
+    color: white;
+    background-color:green ;
+  }
+  
+  .inactive {
+    border-radius: 1px solid black;    
+    background-color:red ;
+    color: white;
+    font-weight: bolder;
+  }
+  td div {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+  }
+  
+  

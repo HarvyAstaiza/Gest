@@ -17,7 +17,7 @@ export class TeachersService {
       const headers = new HttpHeaders({
         Authorization: `Bearer ${token}`,
       });
-      return this.http.get<any[]>(this.apiUrl + "/list-docente", { headers });
+      return this.http.get<any[]>(this.apiUrl + "/list-Teacher", { headers });
     } else {
       // Manejar el caso en que no se encuentre el token
       return throwError("Token no encontrado");
@@ -50,7 +50,7 @@ export class TeachersService {
         "Content-Type": "application/json", // Especifica el tipo de contenido
       });
 
-      return this.http.post<any>(this.apiUrl +"/crear-docente" , newTeacher, { headers });
+      return this.http.post<any>(this.apiUrl +"/create-Teacher" , newTeacher, { headers });
     } else {
       // Manejar el caso en que no se encuentre el token
       return throwError("Token no encontrado");
@@ -63,7 +63,7 @@ export class TeachersService {
         Authorization: `Bearer ${token}`,
       });
 
-      const deleteUrl = `${this.apiUrl}/eliminar-docente/${_id}`; // URL para eliminar un usuario por ID
+      const deleteUrl = `${this.apiUrl}eliminar-docente/${_id}`; // URL para eliminar un usuario por ID
 
       return this.http.delete(deleteUrl, { headers });
     } else {

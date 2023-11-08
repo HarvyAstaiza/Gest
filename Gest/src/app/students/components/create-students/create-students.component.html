@@ -1,61 +1,35 @@
 <div class="container">
-    <h1 class="text-center">Crear Estudiantes</h1>
-    <form  (ngSubmit)="onCreateStudents()" class="">
+  <h1 class="text-center">Crear Estudiantes</h1>
+  <form (ngSubmit)="onCreateStudents()" class="">
+    
       <div class="row">
         <div class="form-group col-6">
-          <label for="Identificacion">Identificación</label>
-          <input type="text" class="form-control" id="Identificacion" name="Identificacion" [(ngModel)]="student.Identificacion">
+          <label for="code_Student">Codigo Estudiante</label>
+          <input type="text" class="form-control" id="code_Student" name="code_Student"
+            [(ngModel)]="student.code_Student">
         </div>
         <div class="form-group col-6">
-          <label for="Nombre">Nombre Completo</label>
-          <input type="text" class="form-control" id="Nombre" name="Nombre" [(ngModel)]="student.Nombre">
+          <label for="document_Student">Identificación</label>
+          <input type="text" class="form-control" id="document_Student" name="document_Student"
+            [(ngModel)]="student.document_Student">
         </div>
         <div class="form-group col-6">
-          <label for="Codigo">Código</label>
-          <input type="text" class="form-control" id="Codigo" name="Codigo" [(ngModel)]="student.Codigo">
+          <label for="name_Student">Nombre Completo</label>
+          <input type="text" class="form-control" id="name_Student" name="name_Student"
+            [(ngModel)]="student.name_Student">
         </div>
         <div class="form-group col-6">
-          <label for="Pensum">Pensum</label>
-          <input type="text" class="form-control" id="Pensum" name="Pensum" [(ngModel)]="student.Pensum">
-        </div>
-        <div class="form-group col-6">
-            <label for="Jornada">Jornada</label>
-            <select class="form-control" id="Jornada" name="Jornada" [(ngModel)]="student.Jornada">
-                <option value="Diurno">Diurno</option>
-                <option value="Nocturno">Nocturno</option>
-        </select>
-        </div>
-        <div class="form-group col-6">
-        
-        <label for="Estado_Matricula">Estado de Matrícula</label>
-        <select class="form-control" id="Estado_Matricula" name="Estado_Matricula" [(ngModel)]="student.Estado_Matricula">
-            <option value="Activo">Activo</option>
-            <option value="Inactivo">Inactivo</option>
-        </select>
-        </div>
-        <div class="form-group col-6">
-          <label for="Semestre">Semestre</label>
-          <select class="form-control" id="Semestre" name="Semestre" [(ngModel)]="student.Semestre">
-            <option *ngFor="let semester of semestreOptions" [value]="semester">{{semester}}</option>
-          </select>
-        </div>
-        <div class="form-group col-6">
-          <label for="Celular">Celular</label>
-          <input type="text" class="form-control" id="Celular" name="Celular" [(ngModel)]="student.Celular">
-        </div>
-        <div class="form-group col-6">
-          <label for="Correo">Correo</label>
-          <input type="text" class="form-control" id="Correo" name="Correo" [(ngModel)]="student.Correo">
-        </div>
-        <div class="form-group col-6">
-          <label for="Correo_institucional">Correo Institucional</label>
-          <input type="text" class="form-control" id="Correo_institucional" name="Correo_institucional" [(ngModel)]="student.Correo_institucional">
-        </div>
-        <div class="form-group col-6">
-          <label for="Rol">Rol</label>
-          <input type="text" class="form-control" id="Rol" name="Rol" [(ngModel)]="student.Rol" readonly>
+          <label for="enrollmentStatus">Estado de Matricula</label>
+          <div class="sidebar-box">
+            <select class="form-control styled-select" id="enrollmentStatus" name="enrollmentStatus" [(ngModel)]="student.Enrollment_Status">
+              <option value="true">Activo</option>
+              <option value="false">Inactivo</option>
+            </select>
+            
+          </div>
+          
         </div>
       </div>
       <button type="submit" class="btn btn-primary mt-5 offset-5 justify-content-center d-flex">Guardar</button>
-    </form>
-  </div>
+  </form>
+</div>

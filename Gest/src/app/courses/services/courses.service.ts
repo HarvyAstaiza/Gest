@@ -22,7 +22,7 @@ export class CoursesService {
       const headers = new HttpHeaders({
         Authorization: `Bearer ${token}`,
       });
-      return this.http.get<any[]>(this.apiUrl + "/list-materia", { headers });
+      return this.http.get<any[]>(this.apiUrl + "/", { headers });
     } else {
       // Manejar el caso en que no se encuentre el token
       return throwError("Token no encontrado");
@@ -49,7 +49,7 @@ export class CoursesService {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json", // Especifica el tipo de contenido
       });
-      return this.http.post<any>(this.apiUrl + "/crear-materia", newCourse, {headers,});
+      return this.http.post<any>(this.apiUrl + "create-Subject", newCourse, {headers,});
     } else {
       // Manejar el caso en que no se encuentre el token
       return throwError("Token no encontrado");

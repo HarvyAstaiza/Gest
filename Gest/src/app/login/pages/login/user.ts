@@ -4,4 +4,5 @@ export interface Usuarios{
     email:String,
     password:String,
     role:String,
+    code_User:String,
 }

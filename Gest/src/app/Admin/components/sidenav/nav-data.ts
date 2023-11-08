@@ -57,13 +57,13 @@ export const navbarData : INavbarData[] = [
         label:'Evaluacion',
     },
     {
-        routeLink:'/home/user',
+        routeLink:'/home/singup',
         icon:'bi bi-book',
         label:'Usuarios',
         items:[
             {
-            routeLink:'/home/usuarios/list',
-            label:'Lista Materia'
+            routeLink:'/home/singup',
+            label:'Registrar Usuarios'
             },
             {
                 routeLink:'/home/usuarios/create',

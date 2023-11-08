@@ -17,7 +17,6 @@ export class CreateTeachersComponent  {
     code_Teacher:'',
     identification:'',
     name: '',
-    
   };
 
  
@@ -29,11 +28,11 @@ export class CreateTeachersComponent  {
     this.teachersService.postTeacher(this.teacher).subscribe(
       response => {
         // Maneja la respuesta del servidor aquí si es necesario
-        Swal.fire('Usuario creado', 'Usuario creado correctamente', 'success');
+        Swal.fire('Docente', 'Docente creado correctamente', 'success');
       },
       error => {
         // Maneja los errores aquí
-        Swal.fire('Error al crear usuario', error.message, 'error');
+        Swal.fire('Error al crear Docente', error.message, 'error');
       }
     );
 

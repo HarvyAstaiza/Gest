@@ -1,24 +1,23 @@
 <body>
-  
-
-<div class="contenedor">
-<div class="central">
-  <div class="login">    
-     <p class="titulo">Bienvenido A Gest</p>
-      <hr>
-     <form (ngSubmit)="onLogin(email,password)">
-        <img class="logo_fup" src="assets/images/logo_fup.png" alt="Logo de la aplicación">   
-        
-        <input type="text" [placeholder]="placeholder_email"  name="email" [(ngModel)]="email" required>
-        
-        <input type="password" [placeholder]="placeholder_password" name="password" [(ngModel)]="password" required>
-        <button type="submit"  >Iniciar Sesión</button>
-        <a class="recovery" href="http://facebook.com">Olvide mi contraseña</a>
-      </form>
-      <br>
-      
-    
+  <div class="preload" [hidden]="!loading">
+    <p>Cargando...</p>
   </div>
-</div>
-</div>
+
+  <div class="contenedor">
+    <div class="central">
+      <div class="login">
+        <p class="titulo">Bienvenido A Gest</p>
+        <hr>
+        <form (ngSubmit)="onLogin()">
+          <img class="logo_fup" src="assets/images/logo_fup.png" alt="Logo de la aplicación">
+
+          <input type="text" [placeholder]="placeholder_email" name="email" [(ngModel)]="email" required>
+
+          <input type="password" [placeholder]="placeholder_password" name="password" [(ngModel)]="password" required>
+          <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p *ngIf="errorMessage" class="error-message text-center text-light fw-bolder">{{ errorMessage }}</p>
+      </div>
+    </div>
+  </div>
 </body>

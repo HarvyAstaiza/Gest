@@ -11,24 +11,17 @@ import Swal from 'sweetalert2';
 export class CreateStudentsComponent {
   
   student: Students = {
-    Identificacion:'',
-    Nombre:'',
-    Codigo:'',
-    Pensum:'',
-    Estado_Matricula:'Activo',
-    Semestre:'Primero',
-    Celular:'',
-    Correo:'',
-    Contraseña:'',
-    Correo_institucional:'',
-    Jornada:'Diurno',	
-    Rol:'Estudiante',
+    code_Student:'',
+    name_Student:'',
+    document_Student:'',
+    Enrollment_Status:false,
   };
   constructor(private studentsService: StudentsService) {} // Inyecta tu servicio de API
 
   semestreOptions: string[] = ['Primero', 'Segundo', 'Tercero', 'Cuarto', 'Quinto', 'Sexto', 'Séptimo', 'Octavo', 'Noveno'];
 
   onCreateStudents() {
+    
     // Llama al método de tu servicio API para enviar los datos a la API
     this.studentsService.postStudents(this.student).subscribe(
       response => {

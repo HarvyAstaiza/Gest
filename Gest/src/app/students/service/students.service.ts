@@ -14,7 +14,7 @@ export class StudentsService {
       const headers = new HttpHeaders({
         'Authorization': `Bearer ${token}`
       });
-      return this.http.get<any[]>(this.apiUrl+'/list-estudiante', { headers });
+      return this.http.get<any[]>(this.apiUrl+'list-Student', { headers });
     } else {
       // Manejar el caso en que no se encuentre el token
       return throwError('Token no encontrado');
@@ -29,7 +29,7 @@ postStudents(newStudent: any): Observable<any> {
       "Content-Type": "application/json", // Especifica el tipo de contenido
     });
 
-    return this.http.post<any>(this.apiUrl +"/crear-estudiante" , newStudent, { headers });
+    return this.http.post<any>(this.apiUrl +"create-Student" , newStudent, { headers });
   } else {
     // Manejar el caso en que no se encuentre el token
     return throwError("Token no encontrado");

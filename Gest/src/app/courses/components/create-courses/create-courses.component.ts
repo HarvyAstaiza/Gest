@@ -10,11 +10,15 @@ import Swal from 'sweetalert2';
 })
 export class CreateCoursesComponent {
   courses: Courses = {
-    Nombre:'',
-    Codigo_Asignatura:'',
-    Jornada:'Diurna',
-    Semestre:'Primero',
-    Tipo_Materia:'Habilitable'
+  
+    code_Subjects:'',
+    name:'',
+    semester:'',
+    type_of_matter:'',
+    id_teacher:'',
+    id_thematic:'',
+    id_bibliography:'',
+    id_cybergraphy:'',
   };
   constructor(private coursesService: CoursesService) {} // Inyecta tu servicio de API
 

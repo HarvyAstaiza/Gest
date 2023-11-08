@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './Admin/components/home/home.component';
 import { LoginComponent } from './login/pages/login/login.component';
@@ -19,6 +19,7 @@ import { ListarCoursesComponent } from './courses/components/listar-courses/list
 import { CreateCoursesComponent } from './courses/components/create-courses/create-courses.component';
 import { ActualizarCoursesComponent } from './courses/components/actualizar-courses/actualizar-courses.component';
 import { EliminarCoursesComponent } from './courses/components/eliminar-courses/eliminar-courses.component';
+import { SingupComponent } from './signup/pages/singup/singup.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,7 @@ const routes: Routes = [
     {path:':id/update',component :ActualizarTeachersComponent},
     {path:'delete',component :EliminarTeachersComponent}
   ]},
+  {path:'singup',component:SingupComponent}
 
 ]
 }// Agrega más rutas para otras secciones

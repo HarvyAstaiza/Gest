@@ -7,7 +7,7 @@ import { HomeComponent } from './Admin/components/home/home.component';
 import { SidenavComponent } from './Admin/components/sidenav/sidenav.component';
 import { BodyComponent } from './Admin/components/body/body.component';
 import { LoginComponent } from './login/pages/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule } from '@angular/forms';
 import { AuthenticationService } from './login/services/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -32,7 +32,7 @@ import { ActualizarTeachersComponent } from './teachers/components/actualizar-te
 import { EliminarTeachersComponent } from './teachers/components/eliminar-teachers/eliminar-teachers.component';
 import { CreateStudentsComponent } from './students/components/create-students/create-students.component';
 import { ActualizarStudentsComponent } from './students/components/actualizar-students/actualizar-students.component';
-
+import { SingupComponent } from './signup/pages/singup/singup.component';
 
 
 
@@ -51,7 +51,6 @@ import { ActualizarStudentsComponent } from './students/components/actualizar-st
     ListarStudentsComponent,
     CreateStudentsComponent,
     ActualizarStudentsComponent,
-    
     ListarTeachersComponent,
     SublevelMenuComponent,
     ListarCoursesComponent,
@@ -61,14 +60,9 @@ import { ActualizarStudentsComponent } from './students/components/actualizar-st
     CreateTeachersComponent,
     ActualizarTeachersComponent,
     EliminarTeachersComponent,
-    
-
-    
-    
-
+    SingupComponent,
   ],
-  imports: [
-   
+  imports: [   
     BrowserModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
@@ -77,7 +71,8 @@ import { ActualizarStudentsComponent } from './students/components/actualizar-st
     FormsModule,
     HttpClientModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    
   ],
   providers: [AuthenticationService
   ],
