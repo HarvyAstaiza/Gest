@@ -27,7 +27,18 @@ const routes: Routes = [
   { path: 'login',component:LoginComponent}, // Ruta inicial redirige al dashboard  
   {path:'home',component :HomeComponent,
   children:[
+  
   { path:'dashboard',component: DashboardComponent},
+  {
+    path: 'students',
+    component: HomeStudentsComponent,
+    children: [
+      { path: 'list', component: ListarStudentsComponent },
+      { path: 'create', component: CreateStudentsComponent },
+      { path: ':id/update', component: ActualizarStudentsComponent },
+      { path: 'delete', component: EliminarStudentsComponent }
+    ]
+  },
   {path:'students',component:HomeStudentsComponent,children:[
     {path:'list',component :ListarStudentsComponent},
     {path:'create',component :CreateStudentsComponent},

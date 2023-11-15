@@ -27,7 +27,7 @@ import { CreateCoursesComponent } from './courses/components/create-courses/crea
 import { ActualizarCoursesComponent } from './courses/components/actualizar-courses/actualizar-courses.component';
 import { EliminarCoursesComponent } from './courses/components/eliminar-courses/eliminar-courses.component';
 import { CreateTeachersComponent } from './teachers/components/create-teachers/create-teachers.component';
-import { TeachersModule } from './teachers/teachers.module';
+
 import { ActualizarTeachersComponent } from './teachers/components/actualizar-teachers/actualizar-teachers.component';
 import { EliminarTeachersComponent } from './teachers/components/eliminar-teachers/eliminar-teachers.component';
 import { CreateStudentsComponent } from './students/components/create-students/create-students.component';

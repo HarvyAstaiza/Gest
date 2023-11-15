@@ -108,11 +108,6 @@ export const navbarData : INavbarData[] = [
         ]
     },    
     
-    {
-        routeLink:'/login',
-        icon:'bi bi-box-arrow-in-right',
-        label:'Cerrar Sesion',
-
-    },
+   
     
 ];

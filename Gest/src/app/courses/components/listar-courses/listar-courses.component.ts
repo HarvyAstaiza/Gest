@@ -3,6 +3,8 @@ import { Courses } from '../../pages/home-courses/courses';
 import { CoursesService } from '../../services/courses.service';
 import { TeachersService } from '../../../teachers/service/teachers.service';
 import { Teachers } from '../../../teachers/pages/home-teachers/teacher';
+import { AuthenticationService } from '../../../login/services/authentication.service';
+import { Admin } from 'mongodb';
 
 @Component({
   selector: 'app-listar-courses',
@@ -12,12 +14,31 @@ import { Teachers } from '../../../teachers/pages/home-teachers/teacher';
 export class ListarCoursesComponent {
   selectedCourse: any; 
   Courses: Courses[] = [];
+  teachers: Teachers[] = [];
+  userid: string = '';
+  userRol: string = '';
+  constructor(private coursesService: CoursesService, private teacherService:TeachersService,private authenticationService:AuthenticationService) {
+
+    const storedUserId = this.authenticationService.getUserId();
+    const storedUserRol = this.authenticationService.getUserRol();
   
-  router: any;
-  constructor(private coursesService: CoursesService, private teacherService:TeachersService) {}
+    // Asigna los valores solo si no son null
+    if (storedUserId !== null) {
+      this.userid = storedUserId;
+    }
+    if (storedUserRol !== null) {
+      this.userRol = storedUserRol;
+    }
+  }
+  
 
   ngOnInit(): void {
-    this.loadCourses();
+    if(this.userRol ==='Administrador'){
+      this.loadCourses();
+    }
+    if(this.userRol ==='Docente'){
+      this.loadCoursepordocente();
+    }
   }
   
   
@@ -38,9 +59,46 @@ export class ListarCoursesComponent {
     }
   }
 
-  loadCourses() {
-    this.coursesService.getCourses().subscribe((data: Courses[]) => {
-      this.Courses = data;
-    });
+  loadCoursepordocente(){
+    
+      this.coursesService.getCoursesByCodeUser(this.userid).subscribe(
+        (data) => {
+          this.Courses = data;
+          this.loadTeacherNamesForCourses();
+        },
+        (error) => {
+          console.error('Error al cargar los cursos por code_User:', error);
+        }
+      );
+    
+  }
+  
+  loadCourses(): void {
+    this.coursesService.getCourses().subscribe(
+      (data) => {
+        
+        this.Courses = data;
+        // Obtener el nombre del profesor después de cargar los cursos
+        this.loadTeacherNamesForCourses();
+      },
+      (error) => {
+        console.error("Error al obtener cursos", error);
+      }
+    );
+  }
+  
+  loadTeacherNamesForCourses(): void {
+    // Iterar sobre cada curso y obtener el nombre del profesor
+    for (const course of this.Courses) {
+      this.teacherService.getTeacherbyid(course.id_teacher).subscribe(
+        (teacher) => {
+          // Asignar el nombre del profesor al curso correspondiente
+          course.teacher_Name = teacher.name;
+        },
+        (error) => {
+          console.error(`Error al obtener el nombre del profesor para el curso ${course._id}`, error);
+        }
+      );
+    }
   }
 }

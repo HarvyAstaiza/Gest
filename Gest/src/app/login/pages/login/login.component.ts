@@ -21,33 +21,42 @@ export class LoginComponent {
 
   // Método para el inicio de sesión
   onLogin(): void {
-    this.loading = true; // Muestra el elemento de carga
+    this.loading = true;
     this.errorMessage = '';
-    this.authService.login(this.email, this.password).subscribe(
-      (response: { token: any ,id_user: any ,role :any }) => {
+    this.authService.login(this.email.toLowerCase(), this.password).subscribe(
+      (response: { token: any, id_user: any, role: any,code_User :any }) => {
         const token = response.token;
         const userId = response.id_user;
         const userRol = response.role;
+        const codeuser= response.code_User;
+  
+        // Verifica si el rol es permitido
+        if (this.isRoleAllowed(userRol)) {
+          localStorage.setItem('access_token', token);
+          this.authService.setUserId(codeuser);
+          this.authService.setUserRol(userRol);
 
-        // Almacena el token en el almacenamiento local o en una cookie para su posterior uso.
-        localStorage.setItem('access_token', token);
-         // Guarda el userId en el almacenamiento local
-        this.authService.setUserId(userId);
-        this.authService.setUserRol(userRol);
-        // Una vez que la operación de inicio de sesión se haya completado, oculta el elemento de carga.
-        this.loading = false;
-        console.log(userId);
-        console.log(userRol);
-        this.router.navigate(['/home/dashboard']);
+          this.loading = false;
+          this.router.navigate(['/home/dashboard']);
+        } else {
+          this.loading = false;
+          this.errorMessage = '¡No tienes permisos para iniciar sesión!';
+        }
       },
       (error) => {
-        // En caso de error, maneja el error de autenticación aquí y oculta el elemento de carga.
-        
         this.loading = false;
-        this.errorMessage = '!Verifica tus credenciales¡';
-        // Puedes mostrar mensajes de error u otras acciones aquí.
+        this.errorMessage = '¡Verifica tus credenciales!';
       }
     );
+  }
+  
+  // Método para verificar si el rol está permitido
+  private isRoleAllowed(role: string): boolean {
+    // Lista de roles permitidos
+    const allowedRoles = ['docente', 'estudiante', 'administrador', 'administrativo'];
+  
+    // Verifica si el rol está en la lista de roles permitidos
+    return allowedRoles.includes(role.toLowerCase());
   }
 }
 

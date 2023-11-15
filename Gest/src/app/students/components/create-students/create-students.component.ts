@@ -33,6 +33,5 @@ export class CreateStudentsComponent {
         Swal.fire('Error al crear Estudiante', error.message, 'error');
       }
     );
-
   }
 }

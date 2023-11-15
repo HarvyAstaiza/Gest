@@ -79,6 +79,8 @@ export class SingupComponent implements OnInit {
   
   registrarUsuario(): void {
     if (this.formulario.valid) {
+      const lowercaseEmail = this.formulario.get('email')?.value.toLowerCase();
+      this.formulario.patchValue({ email: lowercaseEmail });
       this.singupService.singupUser(this.formulario.value).subscribe(
         (respuesta) => {
           Swal.fire("Usuario", "Usuario creado correctamente", "success");

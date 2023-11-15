@@ -28,6 +28,20 @@ export class CoursesService {
       return throwError("Token no encontrado");
     }
   }
+  getCoursesByCodeUser(codeUser: string): Observable<any[]> {
+    const token = localStorage.getItem("access_token");
+    if (token) {
+      const headers = new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      });
+      const url = `${this.apiUrl}list-Subjects-Teacher/?id_teacher=${codeUser}`;
+      return this.http.get<any[]>(url, { headers });
+    } else {
+      // Manejar el caso en que no se encuentre el token
+      return throwError("Token no encontrado");
+    }
+     
+  }
   
   deleteCoursesById(_id: string): Observable<any> {
     const token = localStorage.getItem("access_token");
@@ -49,13 +63,11 @@ export class CoursesService {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json", // Especifica el tipo de contenido
       });
-      return this.http.post<any>(this.apiUrl + "create-Subject", newCourse, {headers,});
+      return this.http.post<any>(this.apiUrl +"create-Subject", newCourse, {headers,});
     } else {
       // Manejar el caso en que no se encuentre el token
       return throwError("Token no encontrado");
     }
   }
-  
- 
   
 }

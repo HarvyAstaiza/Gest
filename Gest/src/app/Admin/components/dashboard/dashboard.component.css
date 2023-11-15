@@ -1,0 +1,15 @@
+/* Estilos base para la tarjeta */
+.card {
+    
+    margin: 20px; /* Agrega margen para separar las tarjetas */
+}
+
+/* Estilos para hacer la tarjeta responsive */
+@media (max-width: 576px) {
+    /* En pantallas más pequeñas, ajusta el ancho de la tarjeta */
+    .card {
+        width: 100%;
+    }
+}
+
+/* Agrega estilos adicionales según sea necesario para tamaños de pantalla específicos */

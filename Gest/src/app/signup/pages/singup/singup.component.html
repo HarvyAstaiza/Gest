@@ -21,6 +21,7 @@
                 <option value="">Seleccionar Rol</option>
                 <option value="Docente">Docente</option>
                 <option value="Estudiante">Estudiante</option>
+                <option value="Administrativo">Administrativo</option>
                 <!-- Agrega aquí más roles si es necesario -->
             </select>
             <div *ngIf="formulario.get('role')?.invalid && formulario.get('role')?.touched" class="text-danger">

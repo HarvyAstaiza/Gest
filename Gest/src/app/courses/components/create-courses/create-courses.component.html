@@ -1,38 +1,71 @@
+<!-- materias-form.component.html -->
 <div class="container">
-    <h1 class="text-center">Crear Cursos</h1>
-    <form (ngSubmit)="onCreateCourses()">
+    <form [formGroup]="coursesForm" (ngSubmit)="onCreateCourses()">
         <div class="row">
             <div class="form-group col-6">
-                <label for="Codigo_Asignatura">Código de Asignatura</label>
-                <input type="text" class="form-control" id="Codigo_Asignatura" name="Codigo_Asignatura"
-                    [(ngModel)]="courses.code_Subjects">
+                <label for="code_Subjects">Código de la materia:</label>
+                <input class="form-control" type="text" id="code_Subjects" name="code_Subjects"
+                    formControlName="code_Subjects" required value="71216">
             </div>
-            <div class="form-group col-6">
-                <label for="Nombre">Nombre del Curso</label>
-                <input type="text" class="form-control" id="Nombre" name="Nombre" [(ngModel)]="courses.name">
-            </div>
-            <!-- <div class="form-group col-6">
-                <label for="Jornada">Jornada</label>
 
-                <select class="form-control" id="Jornada" name="Jornada" [(ngModel)]="courses.Jornada">
-                    <option value="Diurna">Diurna</option>
-                    <option value="Nocturna">Nocturna</option>
-                </select>
-            </div> -->
             <div class="form-group col-6">
-                <label for="Semestre">Semestre</label>
-                <select class="form-control" id="Semestre" name="Semestre" [(ngModel)]="courses.semester">
-                    <option *ngFor="let semester of semestreOptions" [value]="semester">{{semester}}</option>
-                </select>
+                <label for="name">Nombre de la materia:</label>
+                <input type="text" class="form-control" id="name" name="name" formControlName="name" required>
             </div>
             <div class="form-group col-6">
-                <label for="Tipo_Materia">Tipo Materia</label>
-                <select class="form-control" id="Tipo_Materia" name="Tipo_Materia" [(ngModel)]="courses.type_of_matter">
-                    <option value="Habilitable">Habilitable</option>
-                    <option value="inHabilitable">Inhabilitable</option>
+                <label for="semester">Semestre:</label>
+                <div class="sidebar-box">
+                <select class="form-control styled-select" id="semester" name="semester" formControlName="semester" required>
+                    <option value="" disabled selected>Seleccione Semestre de Materia</option>
+                    <option *ngFor="let semestre of semestreOptions" [value]="semestre">{{ semestre }}</option>
                 </select>
             </div>
-        </div>    
-            <button type="submit" class="btn btn-primary mt-5 offset-5 justify-content-center d-flex">Guardar</button>
+            </div>
+            <div class="form-group col-6">
+                <label for="type_of_matter">Tipo de materia:</label>
+                <div class="sidebar-box">
+                    <select class="form-control styled-select" id="type_of_matter" name="type_of_matter"
+                        formControlName="type_of_matter" required>
+                        <option value="" disabled selected>Seleccione Tipo de Materia</option>
+                        <option *ngFor="let type_matter of type_matterOptions" [value]="type_matter">
+                            {{ type_matter}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-6">
+                <label for="id_teacher">Docente:</label>
+                <div class="sidebar-box">
+                    <select class="form-control styled-select" id="id_teacher" name="id_teacher"
+                        formControlName="id_teacher" required>
+                        <option value="" disabled selected>Seleccione Docente a Asignar </option>
+                        <option *ngFor="let teacher of teachers" [value]="teacher._id">{{ teacher.name }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-6">
+                <label for="methodology">Describe la Metodologia De la Materia:</label>
+                <input type="text" class="form-control" id="methodology" name="methodology" formControlName="methodology" required
+                    >
+            </div>
+            <div class="form-group col-6">
+                <label for="year">Año:</label>
+                <select id="year" name="year" formControlName="year" required>
+                  <option value="" disabled selected>Seleccione año</option>
+                  <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+                </select>
+              </div>
+              
+              <div class="form-group col-6">
+                <label for="period">Período:</label>
+                <select id="period" name="period" formControlName="period" required>
+                  <option value="" disabled selected>Seleccione período</option>
+                  <option *ngFor="let period of periodosOptions" [value]="period">{{ period }}</option>
+                </select>
+              </div>
+            <!-- Agrega más campos según sea necesario -->
+            <div>
+                <button type="submit" class="btn btn-primary mt-5 offset-5 justify-content-center d-flex">Crear Materia</button>
+            </div>
+        </div>
     </form>
 </div>
